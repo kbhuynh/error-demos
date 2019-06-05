@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Titillium+Web:600&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root{
+        --accent: #0054A6;
+    }
+
+    body{
+        background:#eee;
+        font:16px 'Nunito Sans', sans-serif;
+    }
+
+    nav{
+        position:absolute;
+        background:#000;
+        width:100%;
+        height:30px;
+        top:0;
+        left:0;
+        transform:translateZ(100px);
+    }
+
+    header{
+        position:absolute;
+        background:#fff;
+        width:100%;
+        height:125px;
+        top:0;
+        left:0;
+        box-shadow:0px 4px 5px 0px rgba(0,0,0,0.2);
+        z-index:99999;
+    }
+
+    section{
+        height:100vh;
+        padding-bottom:100px;
+    }
+
+    #container{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-left:-95px;
+        height:100vh;
+    }
+
+    #title{
+        max-width:633px;
+        margin-top:35px;
+        transform-style:preserve-3d;
+        transform:perspective(1000px);
+    }
+
+    #title p{
+        font:240px 'Titillium Web', sans-serif;
+        display:inline-block;
+        margin:100px 90px;
+        color:var(--accent);
+    }
+
+    #bm{
+        position:absolute;
+        margin:-17px -326px;
+        width:103%;
+        max-width:103%;
+        height:100%;
+        max-height:100%;
+        box-sizing:border-box;
+        transform:translateZ(20px);
+    }
+
+    img{
+        position:absolute;
+        max-width:180px;
+        margin:164px -91px;
+        transform:translateZ(50px);
+    }
+
+    #error{
+        max-width:400px;
+    }
+
+    #error h1{
+        color:var(--accent);
+        font-size:48px;
+        line-height:54px;
+        margin-top:45px;
+    }
+
+    #error p{
+        font-size:1.3em;
+        margin-top:-20px;
+        line-height:36px;
+    }
+
+    a{
+        background:var(--accent);
+        color:#fff;
+        padding:20px 30px 20px 30px;
+        font-size:1.2em;
+        border-radius:100px;
+        text-decoration:none;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a:hover{
+        background:#333;
+    }
+
+    #idk{
+        width:280px;
+        margin:-100px auto;
+        transform:translateZ(80px);
+    }
+
+    #footer{
+        position:absolute;
+        background:#333;
+        width:100%;
+        height:265px;
+        left:0;
+        border-bottom:45px solid #000;
+    }
+
+    @media (max-width:414px) {
+        img{
+            max-width:105px;
+            margin:145px -54px;
+        }
+
+        #bm{
+            margin:-6px -198.5px;
+        }
+
+        section{
+            height:auto;
+        }
+
+        #container{
+            display:block;
+            margin:0; 
+            height:auto;            
+        }
+
+        #title{
+            width:100%;
+            margin:60px auto 30px auto;
+        }
+
+        #title p{
+            font-size:9em;
+            margin:100px 54px;
+        }
+
+        #error{
+            padding:0 10px 0 10px;
+            text-align:center;
+        }
+
+        #error h1{
+            font-size:2.3em;
+            margin-top:-150px;
+        }
+        
+        #idk{
+            margin:50px auto;
+        }
+    }
+
+    @media(max-width:375px) {
+        #title p{
+            font-size:8em;
+            margin:100px 48px;
+        }
+
+        #error h1{
+            font-size:2.1em;
+            line-height:1.3em;
+        } 
+
+        img{
+            max-width:93px;
+            margin:142px -48px;
+        }
+
+        #bm{
+            margin:-4px -178px;
+        }
+    }
+
+    @media(max-width:320px) {
+        #title p{
+            font-size:7.5em;
+            margin:100px 37px;
+        }
+
+        img{
+            max-width:80px;
+            margin:145px -42px;
+        }
+
+        #bm{
+            margin:-1.5px -150px;
+        }
+
+        #error h1{
+            font-size:2em;
+            margin-top:-140px;
+        }
+
+        #error p{
+            font-size:1.1em;
+        }
+    }
+
+</style>
+<body>
+    <nav></nav>
+    <header></header>
+    <section>
+        <div id="container">
+            <div id="title" data-tilt data-tilt-scale="1.1">
+                <p>4</p>
+                <img src="flask.svg"/>
+                <span id="bm"></span>
+                <p>4</p>
+            </div>
+
+            <div id="error">
+                <h1>Oops! Something went wrong.</h1>
+                <p>Looks like we couldn't find the page you were looking for.</p>
+            </div>
+        </div>
+        <div id="idk"a><a href="/">Go back to the homepage</a></div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="/lottie.js"></script>
+    <script src="/index.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+</body>
