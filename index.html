@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Titillium+Web:600&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -10,17 +11,48 @@
 
     body{
         background:#eee;
-        font:16px 'Nunito Sans', sans-serif;
+        font-family: "open-sans","Lucida Grande",Arial,Verdana,Helvetica,sans-serif;
     }
 
     nav{
         position:absolute;
         background:#000;
+        color:#fff;
+        font-size:0.8em;
         width:100%;
-        height:30px;
+        padding:7px 0px 6px 0px;
         top:0;
         left:0;
         transform:translateZ(100px);
+    }
+
+    nav a{
+        margin-right:10px;
+    }
+
+    nav a:first-child{
+        margin-left:20px;
+    }
+
+    .other{
+        float:right;
+        padding-right:15px;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        margin-top:1px;
+    }
+    
+    .other a{
+        padding:30px;
+    }
+
+    .other a:nth-child(2){
+        background:#0074E0;
+    }
+
+    .other img{
+        vertical-align:middle;
+        margin-top:-3px;
     }
 
     header{
@@ -48,7 +80,7 @@
     }
 
     #title{
-        max-width:633px;
+        max-width:634px;
         margin-top:35px;
         transform-style:preserve-3d;
         transform:perspective(1000px);
@@ -72,7 +104,7 @@
         transform:translateZ(20px);
     }
 
-    img{
+    section img{
         position:absolute;
         max-width:180px;
         margin:164px -91px;
@@ -81,22 +113,25 @@
 
     #error{
         max-width:400px;
+        font:16px 'Nunito Sans', sans-serif;
     }
 
     #error h1{
         color:var(--accent);
         font-size:48px;
         line-height:54px;
-        margin-top:45px;
+        margin-top:45px;  
     }
 
     #error p{
         font-size:1.3em;
         margin-top:-20px;
         line-height:36px;
+        color:#333;
     }
 
-    a{
+    #idk a{
+        font-family:'Nunito Sans', sans-serif;
         background:var(--accent);
         color:#fff;
         padding:20px 30px 20px 30px;
@@ -130,7 +165,7 @@
     }
 
     @media (max-width:414px) {
-        img{
+        section img{
             max-width:105px;
             margin:145px -53px;
             transform:translateZ(40px);
@@ -186,7 +221,7 @@
             line-height:1.3em;
         } 
 
-        img{
+        section img{
             max-width:93px;
             margin:142px -47px;
         }
@@ -202,7 +237,7 @@
             margin:100px 37px;
         }
 
-        img{
+        section img{
             max-width:80px;
             margin:145px -41px;
         }
@@ -221,10 +256,100 @@
         }
     }
 
+    header img{
+        height:60px;
+        margin-top:18px;
+        margin-left:20px;
+    }
+    
+    .menu__list{
+        display: flex;
+        flex-grow: 1;
+        margin-top:-78px;
+        margin-left:205px;
+    }
+
+    ul li {
+        list-style: none;
+        list-style-type: none;
+        padding:35px 13px;
+        text-transform:uppercase;
+        color:#767676;
+        letter-spacing:0.04em;
+        font-size:13px;
+    }
+
+    input {
+        position:absolute;
+        max-width:135px;
+        height:30px;
+        border:1px solid #D9D5D5;
+        border-radius:3px;
+        margin-top:-77px;
+        right:22px;
+        font-size:14px;
+        padding:2px 5px;
+    }
+
+    ul img{
+        width:13px;
+        margin-left:-9px;
+        margin-top:14px;
+    }
+
+    form img{
+        position:absolute;
+        width:18px;
+        right:33px;
+        margin-top:-87px;
+    }
 </style>
 <body>
-    <nav></nav>
-    <header></header>
+    <nav>
+        <a>ACS</a>
+        <a>Publications</a>
+        <a>C&EN</a>
+        <a>CAS</a>
+        <span class="other">
+            <a>Membership</a>
+            <a>Join ACS</a>
+            <img src="icon-avatar-light.svg">
+        </span>
+    </nav>
+    <header>
+        <img src="acs-logo.svg"/>
+        <ul class="menu__list">
+            <li class="menu__item">
+                Meetings & Events
+            </li>
+            <li class="menu__item">
+                Careers
+            </li>
+            <li class="menu__item">
+                Students & Educators
+            </li>
+            <li class="menu__item">
+                Communities
+            </li>
+            <li class="menu__item">
+                Discovery Chemistry
+            </li>
+            <li class="menu__item">
+                Awards
+            </li>
+            <li class="menu__item">
+                Funding
+            </li>
+            <li class="menu__item">
+                More
+            </li>
+            <img src="icon-down_arrow-blue.svg">
+        </ul>
+        <form>
+            <input placeholder="Search">
+            <img src="icon-search-blue.svg">
+        </form>        
+    </header>
     <section>
         <div id="container">
             <div id="title" data-tilt data-tilt-scale="1.1">
@@ -243,7 +368,6 @@
     </section>
 
     <div id="footer"></div>
-
     <script type="text/javascript" src="lottie.js"></script>
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script>
