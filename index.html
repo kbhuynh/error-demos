@@ -23,7 +23,6 @@
         padding:7px 0px 6px 0px;
         top:0;
         left:0;
-        transform:translateZ(100px);
     }
 
     nav a{
@@ -164,7 +163,119 @@
         border-bottom:45px solid #000;
     }
 
+    header img{
+        height:60px;
+        margin-top:18px;
+        margin-left:20px;
+    }
+    
+    .menu__list{
+        display: flex;
+        flex-grow: 1;
+        margin-top:-78px;
+        margin-left:205px;
+    }
+
+    ul li {
+        list-style: none;
+        list-style-type: none;
+        padding:35px 13px;
+        text-transform:uppercase;
+        color:#767676;
+        letter-spacing:0.04em;
+        font-size:13px;
+    }
+
+    input {
+        position:absolute;
+        max-width:135px;
+        height:30px;
+        border:1px solid #D9D5D5;
+        border-radius:3px;
+        margin-top:-77px;
+        right:22px;
+        font-size:14px;
+        padding:2px 5px;
+    }
+
+    ul img{
+        width:13px;
+        margin-left:-9px;
+        margin-top:14px;
+    }
+
+    form img{
+        position:absolute;
+        width:18px;
+        right:33px;
+        margin-top:-87px;
+    }
+    
+    #avatar{
+        display:none;
+    }
+
     @media (max-width:414px) {
+        nav{
+            display:none;
+        }
+
+        header{
+            top:0;
+            height:48px;
+            box-shadow:0px 1px 3px 0px rgba(0,0,0,0.2);
+        }
+        
+        header img{
+            height:30px;
+            margin:10px 5px;
+        }
+
+        .menu__list{
+            display:none;
+        }
+
+        input{
+            display:none;
+        }
+
+        #avatar{
+            display:block;
+            height:48px;
+            width:48px;
+            position:absolute;
+            top:0px;
+            right:48px;
+            border-right:1px solid #eee;
+            background-image:url(icon-avatar.svg);
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+
+        .search-button{
+            height:48px;
+            width:48px;
+            position:absolute;
+            top:0px;
+            right:96px;
+            border-right:1px solid #eee;
+            background-image:url(icon-search.svg);
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+
+        #menu{
+            display:block;
+            height:48px;
+            width:48px;
+            position:absolute;
+            top:0px;
+            right:0px;
+            background-image:url(icon-menu.svg);
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+
         section img{
             max-width:105px;
             margin:145px -53px;
@@ -187,7 +298,7 @@
 
         #title{
             width:100%;
-            margin:60px auto 30px auto;
+            margin:0px auto 30px auto;
         }
 
         #title p{
@@ -256,53 +367,6 @@
         }
     }
 
-    header img{
-        height:60px;
-        margin-top:18px;
-        margin-left:20px;
-    }
-    
-    .menu__list{
-        display: flex;
-        flex-grow: 1;
-        margin-top:-78px;
-        margin-left:205px;
-    }
-
-    ul li {
-        list-style: none;
-        list-style-type: none;
-        padding:35px 13px;
-        text-transform:uppercase;
-        color:#767676;
-        letter-spacing:0.04em;
-        font-size:13px;
-    }
-
-    input {
-        position:absolute;
-        max-width:135px;
-        height:30px;
-        border:1px solid #D9D5D5;
-        border-radius:3px;
-        margin-top:-77px;
-        right:22px;
-        font-size:14px;
-        padding:2px 5px;
-    }
-
-    ul img{
-        width:13px;
-        margin-left:-9px;
-        margin-top:14px;
-    }
-
-    form img{
-        position:absolute;
-        width:18px;
-        right:33px;
-        margin-top:-87px;
-    }
 </style>
 <body>
     <nav>
@@ -313,7 +377,7 @@
         <span class="other">
             <a>Membership</a>
             <a>Join ACS</a>
-            <img src="icon-avatar-light.svg"/>
+            <img src="icon-avatar-light.svg">
         </span>
     </nav>
     <header>
@@ -343,11 +407,13 @@
             <li class="menu__item">
                 More
             </li>
-            <img src="icon-down_arrow-blue.svg"/>
+            <img src="icon-down_arrow-blue.svg">
         </ul>
         <form>
             <input placeholder="Search">
-            <img src="icon-search-blue.svg"/>
+            <div class="search-button"></div>
+            <div id="avatar"></div>
+            <div id="menu"></div>
         </form>        
     </header>
     <section>
