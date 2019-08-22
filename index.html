@@ -1,456 +1,51 @@
 <!DOCTYPE html>
 <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Titillium+Web:600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/main.css">
 </head>
-<style>
-    :root{
-        --accent: #0054A6;
-    }
-
-    body{
-        background:#eee;
-        font-family: "open-sans","Lucida Grande",Arial,Verdana,Helvetica,sans-serif;
-    }
-
-    nav{
-        position:absolute;
-        background:#000;
-        color:#fff;
-        font-size:0.8em;
-        width:100%;
-        padding:7px 0px 6px 0px;
-        top:0;
-        left:0;
-    }
-
-    nav a{
-        margin-right:10px;
-    }
-
-    nav a:first-child{
-        margin-left:20px;
-    }
-
-    .other{
-        float:right;
-        padding-right:15px;
-        text-transform:uppercase;
-        letter-spacing:1px;
-        margin-top:1px;
-    }
-    
-    .other a{
-        padding:30px;
-    }
-
-    .other a:nth-child(2){
-        background:#0074E0;
-    }
-
-    .other img{
-        vertical-align:middle;
-        margin-top:-3px;
-    }
-
-    header{
-        position:absolute;
-        background:#fff;
-        width:100%;
-        height:95px;
-        top:30px;
-        left:0;
-        box-shadow:0px 4px 5px 0px rgba(0,0,0,0.2);
-        z-index:99999;
-    }
-
-    section{
-        display:flex;
-        flex-flow:column nowrap;
-        height:100vh;
-        justify-content:center;
-    }
-
-    #container{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        margin:-130px 0 0 -95px;
-    }
-
-    #title{
-        max-width:634px;
-        margin-top:35px;
-        transform-style:preserve-3d;
-        transform:perspective(1000px);
-    }
-
-    #title p{
-        font:240px 'Titillium Web', sans-serif;
-        display:inline-block;
-        margin:100px 90px;
-        color:var(--accent);
-    }
-
-    #bm{
-        position:absolute;
-        margin:-17px -326px;
-        width:103%;
-        max-width:103%;
-        height:100%;
-        max-height:100%;
-        box-sizing:border-box;
-        transform:translateZ(20px);
-    }
-
-    section img{
-        position:absolute;
-        max-width:180px;
-        margin:164px -91px;
-        transform:translateZ(50px);
-    }
-
-    #error{
-        max-width:400px;
-        font:16px 'Nunito Sans', sans-serif;
-    }
-
-    #error h1{
-        color:var(--accent);
-        font-size:48px;
-        line-height:54px;
-        margin-top:45px;  
-    }
-
-    #error p{
-        font-size:1.3em;
-        margin-top:-20px;
-        line-height:36px;
-        color:#333;
-    }
-
-    #idk a{
-        font-family:'Nunito Sans', sans-serif;
-        background:var(--accent);
-        color:#fff;
-        padding:20px 30px 20px 30px;
-        font-size:1.2em;
-        border-radius:100px;
-        text-decoration:none;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-    }
-
-    a:hover{
-        background:#333;
-    }
-
-    #idk{
-        width:280px;
-        margin:-50px auto;
-        transform:translateZ(80px);
-    }
-
-    #footer{
-        position:absolute;
-        background:#333;
-        width:100%;
-        height:265px;
-        left:0;
-        border-bottom:45px solid #000;
-    }
-
-    header img{
-        height:60px;
-        margin-top:18px;
-        margin-left:20px;
-    }
-    
-    .menu__list{
-        display: flex;
-        position:absolute;
-        flex-grow:1;
-        margin-top:-78px;
-        right:190px;
-    }
-
-    ul li {
-        list-style: none;
-        list-style-type: none;
-        padding:35px 13px;
-        text-transform:uppercase;
-        color:#767676;
-        letter-spacing:0.04em;
-        font-size:13px;
-    }
-
-    input {
-        position:absolute;
-        max-width:135px;
-        height:30px;
-        border:1px solid #D9D5D5;
-        border-radius:3px;
-        margin-top:-53px;
-        right:22px;
-        font-size:14px;
-        padding:2px 5px;
-    }
-
-    ul img{
-        width:13px;
-        margin-left:-9px;
-        margin-top:14px;
-    }
-
-    form img{
-        position:absolute;
-        width:18px;
-        right:33px;
-        margin-top:-88px;
-    }
-    
-    #avatar{
-        display:none;
-    }
-
-    @media (max-width:414px) {
-        nav{
-            display:none;
-        }
-
-        header{
-            top:0;
-            height:48px;
-            box-shadow:0px 1px 3px 0px rgba(0,0,0,0.2);
-        }
-        
-        header img{
-            height:30px;
-            margin:10px 5px;
-        }
-
-        .menu__list{
-            display:none;
-        }
-
-        input{
-            display:none;
-        }
-
-        form img{
-            display:none;
-        }
-
-        #avatar{
-            display:block;
-            height:48px;
-            width:48px;
-            position:absolute;
-            top:0px;
-            right:48px;
-            border-right:1px solid #eee;
-            background-image:url(icon-avatar.svg);
-            background-repeat:no-repeat;
-            background-position: center;
-        }
-
-        .search-button{
-            height:48px;
-            width:48px;
-            position:absolute;
-            top:0px;
-            right:96px;
-            border-right:1px solid #eee;
-            background-image:url(icon-search.svg);
-            background-repeat:no-repeat;
-            background-position: center;
-        }
-
-        #menu{
-            display:block;
-            height:48px;
-            width:48px;
-            position:absolute;
-            top:0px;
-            right:0px;
-            background-image:url(icon-menu.svg);
-            background-repeat:no-repeat;
-            background-position: center;
-        }
-
-        section img{
-            max-width:105px;
-            margin:145px -53px;
-            transform:translateZ(40px);
-        }
-
-        #bm{
-            margin:-6.6px -205.25px;
-        }
-
-        section{
-            height:100vh;
-        }
-
-        #container{
-            display:block;
-            margin:-140px 0 0 0;          
-        }
-
-        #title{
-            width:100%;
-            margin:0px auto 30px auto;
-        }
-
-        #title p{
-            font-size:9em;
-            margin:100px 54px;
-        }
-
-        #error{
-            padding:0 10px 0 10px;
-            text-align:center;
-        }
-
-        #error h1{
-            font-size:2.3em;
-            margin-top:-150px;
-        }
-        
-        #idk{
-            margin:20px auto;
-        }
-    }
-
-    @media(max-width:375px) {
-        #title p{
-            font-size:8em;
-            margin:100px 48px;
-        }
-
-        #error h1{
-            font-size:2.1em;
-            line-height:1.3em;
-        } 
-
-        section img{
-            max-width:93px;
-            margin:142px -47px;
-        }
-
-        #bm{
-            margin:-5px -185.3px;
-        }
-    }
-
-    @media(max-width:320px) {
-        #title p{
-            font-size:7.5em;
-            margin:100px 37px;
-        }
-
-        section img{
-            max-width:80px;
-            margin:145px -41px;
-        }
-
-        #bm{
-            margin:-2px -157.95px;
-        }
-
-        #error h1{
-            font-size:2em;
-            margin-top:-140px;
-        }
-
-        #error p{
-            font-size:1.1em;
-        }
-    }
-
-</style>
 <body>
-    <nav>
-        <a>ACS</a>
-        <a>Publications</a>
-        <a>C&EN</a>
-        <a>CAS</a>
-        <span class="other">
-            <a>Membership</a>
-            <a>Join ACS</a>
-            <img src="icon-avatar-light.svg">
-        </span>
-    </nav>
-    <header>
-        <img src="acs-logo.svg"/>
-        <ul class="menu__list">
-            <li class="menu__item">
-                Meetings & Events
-            </li>
-            <li class="menu__item">
-                Careers
-            </li>
-            <li class="menu__item">
-                Students & Educators
-            </li>
-            <li class="menu__item">
-                Communities
-            </li>
-            <li class="menu__item">
-                Discovery Chemistry
-            </li>
-            <li class="menu__item">
-                Awards
-            </li>
-            <li class="menu__item">
-                Funding
-            </li>
-            <li class="menu__item">
-                More
-            </li>
-            <img src="icon-down_arrow-blue.svg">
-        </ul>
-        <form>
-            <input placeholder="Search">
-            <img src="icon-search-blue.svg"/>
-            <div class="search-button"></div>
-            <div id="avatar"></div>
-            <div id="menu"></div>
-        </form>        
-    </header>
-    <section>
-        <div id="container">
-            <div id="title" data-tilt data-tilt-scale="1.1">
-                <p>4</p>
-                <img src="flask.svg"/>
-                <span id="bm"></span>
-                <p>4</p>
-            </div>
-
-            <div id="error">
-                <h1>Oops! Something went wrong.</h1>
-                <p>Looks like we couldn't find the page you were looking for.</p>
-            </div>
+<section>
+    <div id="container">
+        <div id="title" data-tilt data-tilt-scale="1.1">
+            <p>4</p>
+            <span id="atom"></span>
+              <noscript>
+              <img src="/atom.svg"/>
+              </noscript>
+            <p>4</p>
         </div>
-        <div id="idk"a><a href="/">Go back to the homepage</a></div>
-    </section>
+        <div id="error">
+            <h1>Uh-oh, this page must have lost an electron!</h1>
+            <p>But we're not positive... Try the following links instead.</p>
+        </div>
+    </div>
+</section>
+<section id="extra">
+    <div id="txt">Helpful Links</div> 
+    <div id="rect"></div>  
+    <div id="line"></div>
+    <div class="links">
+        <a class="btn-link btn" href="/content/acs/en/meetings/national-meeting.html">Upcoming ACS National Meeting</a>
+        <a class="btn-link btn" href="/content/acs/en/education/resources/highschool/chemmatters.html">ChemMatters</a>
+        <a class="btn-link btn" href="/content/acs/en/careers/continuing.html">Professional Education</a>
+        <a class="btn-link btn" href="/content/acs/en/contact.html">Contact Us</a>
+       <a class="btn-link btn" href="/content/acs/en/careers/college-to-career.html">College to Career</a>
+      <a class="btn-link btn" href="https://www.donate.acs.org/eweb/ACSOLGTemplate.aspx?site=ACS_Giving&WebCode=allprograms">Make a Donation</a>
+       
+    </div>
+</section>
+<script src="/lottie_light.min.js"></script>
+<script type="text/javascript">
+  var animation = lottie.loadAnimation({
+  container: document.getElementById("atom"),
+  renderer: 'svg',
+  load: true,
+  autoplay: true,
+  loop: true,
+  path: 'data.json'
+})
 
-    <div id="footer"></div>
-    <script type="text/javascript" src="lottie.js"></script>
-    <script type="text/javascript" src="vanilla-tilt.js"></script>
-    <script>
-    var animation = lottie.loadAnimation({
-            container: document.getElementById("bm"),
-            renderer: 'svg',
-            load: true,
-            autoplay: true,
-            loop: true,
-            path: 'data-2.json'
-});
-
-    </script>
+</script>
+<script type="text/javascript" src="/vanilla-tilt.min.js"></script>
 </body>
